@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="AcercaDe.cpp" />
     <ClCompile Include="AppContext.cpp" />
+    <ClCompile Include="AreaJuego.cpp" />
     <ClCompile Include="Cargar.cpp" />
     <ClCompile Include="Jugar.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="AcercaDe.h" />
     <ClInclude Include="AppContext.h" />
+    <ClInclude Include="AreaJuego.h" />
     <ClInclude Include="Cargar.h" />
     <ClInclude Include="Jugar.h" />
     <ClInclude Include="Ventana.h" />

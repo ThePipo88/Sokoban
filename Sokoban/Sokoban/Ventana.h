@@ -1,6 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Jugar.h"
+#include "AcercaDe.h"
+#include "AreaJuego.h"
+#include "AppContext.h"
 
 using namespace std;
 using namespace sf;
@@ -8,12 +12,16 @@ using namespace sf;
 class Ventana {
 
 private:
-	int largo;
-	int ancho;
+	
+	Jugar* jg;
+	AcercaDe* acercaDe;
+	AreaJuego* areaJuego;
+
 	RenderWindow* ventana;
 
+
 public:
-	Ventana(int ancho, int largo);
+	Ventana(int x, int y);
 	void bucleJuego();
-	void clickPantalla(int x, int y, int pantalla);
+	void clickPantalla(int x, int y);
 };

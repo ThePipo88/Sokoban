@@ -1,14 +1,19 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Ventana.h"
+#include "AcercaDe.h"
+#include "Jugar.h"
 #include "AppContext.h"
+
 
 using namespace std;
 using namespace sf;
 
 Ventana::Ventana(int largo, int ancho) {
 	ventana = new RenderWindow(VideoMode(largo, ancho), "Sokoban");
-    
+    jg = new Jugar();
+    acercaDe = new AcercaDe();
+    areaJuego = new AreaJuego();
 	bucleJuego();
 
 }
@@ -16,9 +21,7 @@ Ventana::Ventana(int largo, int ancho) {
 void Ventana::bucleJuego() {
 
 	while (this->ventana->isOpen()) {
-        
-
-       
+         
 
         if (AppContext::getInstance().getPantalla() == 1) {
             Texture texture;
@@ -33,45 +36,18 @@ void Ventana::bucleJuego() {
             ventana->display();
 
         }else if(AppContext::getInstance().getPantalla() == 2){
-            Texture texture;
-            if (!texture.loadFromFile("Resources/Fondo2.JPG"))
-            {
-                cout << "Error al cargar imagen" << endl;
-            }
-            Sprite sprite(texture);
-            sprite.setPosition(0.f, 0.f);
-            ventana->clear();
-            ventana->draw(sprite);
-            ventana->display();
+            
+            jg->bucleJugar(ventana); 
 
         }else if (AppContext::getInstance().getPantalla() == 3) {
 
 
         }else if (AppContext::getInstance().getPantalla() == 4) {
-            Texture texture;
-            if (!texture.loadFromFile("Resources/AcercaDe.JPG"))
-            {
-                cout << "Error al cargar imagen" << endl;
-            }
-            Sprite sprite(texture);
-            sprite.setPosition(0.f, 0.f);
-            ventana->clear();
-            ventana->draw(sprite);
-            ventana->display();
+            acercaDe->bucleJugar(ventana);
 
         }
         else if (AppContext::getInstance().getPantalla() == 6) {
-            Texture texture;
-            if (!texture.loadFromFile("Resources/Juego.JPG"))
-            {
-                cout << "Error al cargar imagen" << endl;
-            }
-            Sprite sprite(texture);
-            sprite.setPosition(0.f, 0.f);
-            ventana->clear();
-            ventana->draw(sprite);
-            ventana->display();
-
+            areaJuego->bucleJugar(ventana);
         }
 
         
@@ -87,13 +63,20 @@ void Ventana::bucleJuego() {
                 cout << Mouse::getPosition(*ventana).x << " , " << Mouse::getPosition(*ventana).y << endl;
 
                 if (AppContext::getInstance().getPantalla() == 1) {
-                    clickPantalla(Mouse::getPosition(*ventana).x, Mouse::getPosition(*ventana).y, 1);
+                    clickPantalla(Mouse::getPosition(*ventana).x, Mouse::getPosition(*ventana).y);
                 }
 
                 if (AppContext::getInstance().getPantalla() == 2) {
-                    clickPantalla(Mouse::getPosition(*ventana).x, Mouse::getPosition(*ventana).y, 2);
+                    jg->clickPantalla(Mouse::getPosition(*ventana).x, Mouse::getPosition(*ventana).y);
                 }
                 
+                if (AppContext::getInstance().getPantalla() == 4) {
+                    acercaDe->clickPantalla(Mouse::getPosition(*ventana).x, Mouse::getPosition(*ventana).y);
+                }
+
+                if (AppContext::getInstance().getPantalla() == 6) {
+                    areaJuego->clickPantalla(Mouse::getPosition(*ventana).x, Mouse::getPosition(*ventana).y);
+                }
 
             }
 
@@ -101,9 +84,7 @@ void Ventana::bucleJuego() {
 	}
 }
 
-void Ventana::clickPantalla(int x, int y, int pantalla) {
-
-    if (AppContext::getInstance().getPantalla() == 1) {
+void Ventana::clickPantalla(int x, int y) {
 
         if (x > 494 && x < 796 && y > 339 && y < 419) {
             cout << "Jugar" << endl;
@@ -118,22 +99,8 @@ void Ventana::clickPantalla(int x, int y, int pantalla) {
             AppContext::getInstance().setPantalla(4);
         }
         else if (x > 494 && x < 796 && y > 720 && y < 801) {
-            cout << "Saliiiiiiiiiiiir" << endl;
+            cout << "Salir" << endl;
+            ventana->close();
         }
-
-    }
-    else if (AppContext::getInstance().getPantalla() == 2) {
-
-        if (x > 15 && x < 419 && y > 759 && y < 840) {
-            cout << "Retroceso" << endl;
-            AppContext::getInstance().setPantalla(1);
-        }
-        else if (x >  964 && x < 1268 && y > 759 && y < 840) {
-            cout << "Comenzar" << endl;
-            AppContext::getInstance().setPantalla(6);
-        }
-
-    }
-    
   
 }
