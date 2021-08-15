@@ -9,6 +9,11 @@ class AreaJuego{
 
 private:
 	RenderWindow* vnt;
+	float posX = 200;
+	float posY = 200;
+	int frame = 0;
+	int row = 50;
+	int frame_counter = 1;
 
 
 public:

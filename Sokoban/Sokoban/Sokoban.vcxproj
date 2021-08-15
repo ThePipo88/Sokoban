@@ -148,6 +148,7 @@
     <ClCompile Include="Cargar.cpp" />
     <ClCompile Include="Jugar.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Ventana.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="AreaJuego.h" />
     <ClInclude Include="Cargar.h" />
     <ClInclude Include="Jugar.h" />
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="Ventana.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
