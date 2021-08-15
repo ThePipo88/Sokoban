@@ -79,6 +79,13 @@ void Ventana::bucleJuego() {
                 }
 
             }
+            else if (event.type == sf::Event::KeyPressed) {
+
+                if (AppContext::getInstance().getPantalla() == 6) {
+                    areaJuego->eventoTeclas(event);
+                }
+                
+            }
 
         }
 	}

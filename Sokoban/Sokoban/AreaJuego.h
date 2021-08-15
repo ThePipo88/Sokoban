@@ -15,4 +15,5 @@ public:
 	AreaJuego();
 	void bucleJugar(RenderWindow*& ventana);
 	void clickPantalla(int x, int y);
+	void eventoTeclas(Event event);
 };

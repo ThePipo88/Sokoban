@@ -36,3 +36,10 @@ void AreaJuego::clickPantalla(int x, int y) {
     }
 
 }
+
+void AreaJuego::eventoTeclas(Event event) {
+
+    if (event.key.code == sf::Keyboard::D) {
+        cout << "Tecla D precionada" << endl;
+    }
+}
