@@ -8,9 +8,9 @@ using namespace sf;
 class AreaJuego{
 
 private:
-	RenderWindow* vnt;
-	float posX = 200;
-	float posY = 200;
+
+	float posX = 634;
+	float posY = 305;
 	int frame = 0;
 	int row = 50;
 	int frame_counter = 1;

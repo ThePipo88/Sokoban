@@ -12,6 +12,11 @@ AreaJuego::AreaJuego() {
 
 void AreaJuego::bucleJugar(RenderWindow*& ventana) {
 
+    Texture mapa;
+    mapa.loadFromFile("Resources/mapa1.PNG");
+    Sprite mp1(mapa);
+    mp1.setPosition(460.f, 250.f);
+
     Texture texture;
     texture.loadFromFile("Resources/Juego.JPG");
     Sprite sprite(texture);
@@ -28,6 +33,7 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
 
     ventana->clear();
     ventana->draw(sprite);
+    ventana->draw(mp1);
     ventana->draw(sJugador);
     ventana->display();
 }
@@ -49,7 +55,7 @@ void AreaJuego::eventoTeclas(Event event) {
 
     if (event.key.code == sf::Keyboard::A) {
         //cout << "Tecla A precionada" << endl;
-        posX = posX - 10;
+        posX = posX - 54;
         row = 50;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
@@ -59,7 +65,7 @@ void AreaJuego::eventoTeclas(Event event) {
     }
     else if (event.key.code == sf::Keyboard::D) {
         //cout << "Tecla D precionada" << endl;
-        posX = posX + 10;
+        posX = posX + 54;
         row = 100;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
@@ -69,7 +75,7 @@ void AreaJuego::eventoTeclas(Event event) {
     }
     else if (event.key.code == sf::Keyboard::W) {
         //cout << "Tecla W precionada" << endl;
-        posY = posY - 10;
+        posY = posY - 51;
         row = 150;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
@@ -79,7 +85,7 @@ void AreaJuego::eventoTeclas(Event event) {
     }
     else if (event.key.code == sf::Keyboard::S) {
         //cout << "Tecla S precionada" << endl;
-        posY = posY + 10;
+        posY = posY + 51;
         row = 0;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
