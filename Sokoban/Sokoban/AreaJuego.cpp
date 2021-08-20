@@ -7,10 +7,14 @@
 
 
 AreaJuego::AreaJuego() {
-
+ tablero = new Tablero();
+    tablero->llenar(7, 7);
+    tablero->imprimir();
 }
 
 void AreaJuego::bucleJugar(RenderWindow*& ventana) {
+
+   
 
     Texture mapa;
     mapa.loadFromFile("Resources/mapa1.PNG");
@@ -51,10 +55,62 @@ void AreaJuego::clickPantalla(int x, int y) {
 
 }
 
+bool AreaJuego::movimientoValido(char x) {
+
+    NodoCentral* aux = tablero->buscarJugador();
+   // NodoCentral* aux3 = aux;
+    NodoCentral* aux2;
+    char c;
+    //tablero->buscarJugador();
+    if (aux !=NULL && aux->arriba->getDato() != '#' && x == 'W' ) {
+        c = aux->getDato();
+        aux2 = aux->arriba;
+        aux->setDato(aux2->getDato());
+        aux2->setDato(c);
+        return true;
+    }else {
+        if (aux != NULL && aux->abajo->getDato() != '#' && x == 'S') {
+           // aux3 = aux;
+            c = aux->getDato();
+            aux2 = aux->abajo;
+            
+            aux->setDato(aux2->getDato());
+            aux2->setDato(c);
+
+            return true;
+        }
+        else {
+            if (aux != NULL && aux->izquierda->getDato() != '#' && x == 'A') {
+                c = aux->getDato();
+                aux2 = aux->izquierda;
+                aux->setDato(aux2->getDato());
+                aux2->setDato(c);
+
+                return true;
+            }
+            else {
+                if (aux != NULL && aux->derecha->getDato() != '#' && x == 'D') {
+                    c = aux->getDato();
+                    aux2 = aux->derecha;
+                    aux->setDato(aux2->getDato());
+                    aux2->setDato(c);
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+    }
+    }
+
+   
+
 void AreaJuego::eventoTeclas(Event event) {
 
-    if (event.key.code == sf::Keyboard::A) {
+    if (event.key.code == sf::Keyboard::A && movimientoValido('A') ) {
         //cout << "Tecla A precionada" << endl;
+        tablero->imprimir();
         posX = posX - 54;
         row = 50;
         if (frame_counter == 1) {
@@ -63,8 +119,9 @@ void AreaJuego::eventoTeclas(Event event) {
         }
         frame_counter++;
     }
-    else if (event.key.code == sf::Keyboard::D) {
+    else if (event.key.code == sf::Keyboard::D && movimientoValido('D')) {
         //cout << "Tecla D precionada" << endl;
+        tablero->imprimir();
         posX = posX + 54;
         row = 100;
         if (frame_counter == 1) {
@@ -73,8 +130,9 @@ void AreaJuego::eventoTeclas(Event event) {
         }
         frame_counter++;
     }
-    else if (event.key.code == sf::Keyboard::W) {
+    else if (event.key.code == sf::Keyboard::W && movimientoValido('W')) {
         //cout << "Tecla W precionada" << endl;
+        tablero->imprimir();
         posY = posY - 51;
         row = 150;
         if (frame_counter == 1) {
@@ -83,8 +141,9 @@ void AreaJuego::eventoTeclas(Event event) {
         }
         frame_counter++;
     }
-    else if (event.key.code == sf::Keyboard::S) {
+    else if (event.key.code == sf::Keyboard::S && movimientoValido('S')) {
         //cout << "Tecla S precionada" << endl;
+        tablero->imprimir();
         posY = posY + 51;
         row = 0;
         if (frame_counter == 1) {
