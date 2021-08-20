@@ -145,19 +145,35 @@
     <ClCompile Include="AcercaDe.cpp" />
     <ClCompile Include="AppContext.cpp" />
     <ClCompile Include="AreaJuego.cpp" />
+    <ClCompile Include="Cabecera.cpp" />
     <ClCompile Include="Cargar.cpp" />
     <ClCompile Include="Jugar.cpp" />
+    <ClCompile Include="Lateral.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NodoCabecera.cpp" />
+    <ClCompile Include="NodoCentral.cpp" />
+    <ClCompile Include="NodoColumna.cpp" />
+    <ClCompile Include="NodoFila.cpp" />
+    <ClCompile Include="NodoLateral.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Tablero.cpp" />
     <ClCompile Include="Ventana.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AcercaDe.h" />
     <ClInclude Include="AppContext.h" />
     <ClInclude Include="AreaJuego.h" />
+    <ClInclude Include="Cabecera.h" />
     <ClInclude Include="Cargar.h" />
     <ClInclude Include="Jugar.h" />
+    <ClInclude Include="Lateral.h" />
+    <ClInclude Include="NodoCabecera.h" />
+    <ClInclude Include="NodoCentral.h" />
+    <ClInclude Include="NodoColumna.h" />
+    <ClInclude Include="NodoFila.h" />
+    <ClInclude Include="NodoLateral.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Tablero.h" />
     <ClInclude Include="Ventana.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

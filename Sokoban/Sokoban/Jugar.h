@@ -9,10 +9,14 @@ class Jugar {
 
 private:
 	RenderWindow* vnt;
-
+	Event* evento1;
+	//Tablero* tab;
 
 public:
 	Jugar();
 	void bucleJugar(RenderWindow*& ventana);
 	void clickPantalla(int x, int y);
+	//void procesarEventos(RenderWindow*& ventana);
+
+	
 };

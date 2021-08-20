@@ -1,9 +1,14 @@
 #include <SFML/Graphics.hpp>
 #include "Ventana.h"
+#include "Tablero.h"
 int main()
 {
 
+    
+    
     Ventana* ventana = new Ventana(1280, 853);
+
+    
 
     /*
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
