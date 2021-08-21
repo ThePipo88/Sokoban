@@ -155,7 +155,7 @@
     <ClCompile Include="NodoColumna.cpp" />
     <ClCompile Include="NodoFila.cpp" />
     <ClCompile Include="NodoLateral.cpp" />
-    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Figuras.cpp" />
     <ClCompile Include="Tablero.cpp" />
     <ClCompile Include="Ventana.cpp" />
   </ItemGroup>
@@ -172,7 +172,7 @@
     <ClInclude Include="NodoColumna.h" />
     <ClInclude Include="NodoFila.h" />
     <ClInclude Include="NodoLateral.h" />
-    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Figuras.h" />
     <ClInclude Include="Tablero.h" />
     <ClInclude Include="Ventana.h" />
   </ItemGroup>

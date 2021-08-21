@@ -53,6 +53,12 @@ void Tablero::llenar(int x, int y) {
 				if (i == 3 && j == 1) {
 					insertar(i, j, '@');
 				}
+				else if (i == 2 && j == 2 || i == 2 && j == 4) {
+					insertar(i, j, '$');
+				}
+				else if (i == 4 && j == 2 || i == 4 && j == 4) {
+					insertar(i, j, '.');
+				}
 				else {
 					insertar(i, j, ' ');
 				}

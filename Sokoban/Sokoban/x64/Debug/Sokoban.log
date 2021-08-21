@@ -1,2 +1,11 @@
-﻿  Tablero.cpp
-  Sokoban.vcxproj -> C:\Users\User\Desktop\Sokoban\Sokoban\x64\Debug\Sokoban.exe
+﻿  AcercaDe.cpp
+  AreaJuego.cpp
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(31,27): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(31,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(32,27): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(32,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Jugar.cpp
+  Ventana.cpp
+  main.cpp
+  Generando código...
+  Sokoban.vcxproj -> C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\x64\Debug\Sokoban.exe

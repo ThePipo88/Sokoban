@@ -3,6 +3,7 @@
 #include "Ventana.h"
 #include "AreaJuego.h"
 #include "AppContext.h"
+#include "Figuras.h"
 
 
 
@@ -26,19 +27,16 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
     Sprite sprite(texture);
     sprite.setPosition(0.f, 0.f);
 
-    Texture jugador;
-    jugador.loadFromFile("Resources/sprite.png");
-    Sprite sJugador(jugador);
-
-    sJugador.setPosition(posX, posY);
-
-    sJugador.setTextureRect(IntRect(32*frame, row, 32, 50));
-
+    sp->crearJugador(posX, posY, frame, row);
+    fg[0].crearCajas(cX1, cY1);
+    fg[1].crearCajas(cX2, cY2);
 
     ventana->clear();
     ventana->draw(sprite);
     ventana->draw(mp1);
-    ventana->draw(sJugador);
+    ventana->draw(sp->getSpriteJugador());
+    ventana->draw(fg[0].getSpriteCaja());
+    ventana->draw(fg[1].getSpriteCaja());
     ventana->display();
 }
 
