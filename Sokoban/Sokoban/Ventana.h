@@ -16,7 +16,6 @@ private:
 	Jugar* jg;
 	AcercaDe* acercaDe;
 	AreaJuego* areaJuego;
-
 	RenderWindow* ventana;
 
 

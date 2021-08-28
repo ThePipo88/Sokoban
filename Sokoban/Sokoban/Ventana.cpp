@@ -37,6 +37,7 @@ void Ventana::bucleJuego() {
 
         }else if(AppContext::getInstance().getPantalla() == 2){
             
+            AppContext::getInstance().setNivel(1);
             jg->bucleJugar(ventana); 
 
         }else if (AppContext::getInstance().getPantalla() == 3) {
@@ -82,7 +83,7 @@ void Ventana::bucleJuego() {
             else if (event.type == sf::Event::KeyPressed) {
 
                 if (AppContext::getInstance().getPantalla() == 6) {
-                    areaJuego->eventoTeclas(event);
+                    areaJuego->eventoTeclas(event, NULL);
                 }
                 
             }
@@ -111,3 +112,4 @@ void Ventana::clickPantalla(int x, int y) {
         }
   
 }
+

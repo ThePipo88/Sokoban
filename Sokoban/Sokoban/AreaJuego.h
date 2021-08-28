@@ -21,16 +21,18 @@ private:
 	Figuras *fg = new Figuras[4];
 
 	//570
-	int cX1 = 570;
-	int cY1 = 356;
+	int cX1 = 570, x1 = 2;
+	int cY1 = 356, y1 = 2;
 
-	int cX2 = 570;
-	int cY2 = 458;
+	int cX2 = 570, x2 = 2;
+	int cY2 = 458, y2 = 4;
 
 public:
 	AreaJuego();
 	void bucleJugar(RenderWindow*& ventana);
 	void clickPantalla(int x, int y);
-	void eventoTeclas(Event event);
+	void eventoTeclas(Event event, char repeticion);
+	void posicionGaneTablero(NodoCentral *nc, NodoCentral *nd, int x, int y);
+	void moverCajas(char letra, int f, int c);
 	bool movimientoValido(char x);
 };
