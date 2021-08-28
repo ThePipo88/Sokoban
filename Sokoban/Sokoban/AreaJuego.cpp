@@ -51,7 +51,11 @@ void AreaJuego::clickPantalla(int x, int y) {
         AppContext::getInstance().setPantalla(6);
     }
 
+    
+
 }
+
+//Ayudaaaaaaaaaaaaaaaaaaaaaaaa
 
 bool AreaJuego::movimientoValido(char x) {
 
@@ -59,68 +63,213 @@ bool AreaJuego::movimientoValido(char x) {
    // NodoCentral* aux3 = aux;
     NodoCentral* aux2;
     char c;
+
+    bool dt = false;
     //tablero->buscarJugador();
     if (aux !=NULL && aux->arriba->getDato() != '#' && x == 'W' ) {
-        c = aux->getDato();
-        aux2 = aux->arriba;
-        aux->setDato(aux2->getDato());
-        aux2->setDato(c);
-        return true;
+
+        if (aux->arriba->getDato() == '$') {
+            if (aux->arriba->arriba->getDato() != '$' && aux->arriba->arriba->getDato() != '#' && aux->arriba->arriba->getDato() != '!') {
+                aux->arriba->arriba->setDato('$');
+                aux->arriba->setDato('@');
+                aux->setDato(' ');
+                moverCajas('W', aux->getX(), aux->getY() - 1);
+                dt = true;
+                posicionGaneTablero(aux, aux->arriba->arriba, 0, -2);
+            }
+            else
+            {
+                dt = false;
+            }
+        }
+        else if (aux->arriba->getDato() == '!') {
+
+            if (aux->arriba->arriba->getDato() != '#') {
+                aux->arriba->arriba->setDato('$');
+                moverCajas('W', aux->getX(), aux->getY() - 1);
+                aux->arriba->setDato('@');
+                aux->setDato(' ');
+                dt = true;
+                posicionGaneTablero(aux, aux->arriba->arriba, 0, -2);
+            }
+            else {
+                dt = false;
+            }
+   
+        }
+        else if (aux->arriba->getDato() != '#') {
+            aux->arriba->setDato('@');
+            aux->setDato(' ');
+            dt = true;
+            posicionGaneTablero(aux, aux->arriba->arriba, 0, -2);
+        }
+        
+
+        return dt;
     }else {
         if (aux != NULL && aux->abajo->getDato() != '#' && x == 'S') {
-           // aux3 = aux;
-            c = aux->getDato();
-            aux2 = aux->abajo;
-            
-            aux->setDato(aux2->getDato());
-            aux2->setDato(c);
 
-            return true;
+            if (aux->abajo->getDato() == '$') {
+                if (aux->abajo->abajo->getDato() != '$' && aux->abajo->abajo->getDato() != '#' && aux->abajo->abajo->getDato() != '!') {
+                    aux->abajo->abajo->setDato('$');
+                    aux->abajo->setDato('@');
+                    aux->setDato(' ');
+                    moverCajas('S', aux->getX(), aux->getY() + 1);
+                    dt = true;
+                    posicionGaneTablero(aux, aux->abajo->abajo, 0, +2);
+                }
+                else
+                {
+                    dt = false;
+                }
+            }
+            else if (aux->abajo->getDato() == '!') {
+
+                if (aux->abajo->abajo->getDato() != '#') {
+                    aux->abajo->abajo->setDato('$');
+                    moverCajas('S', aux->getX(), aux->getY() + 1);
+                    aux->abajo->setDato('@');
+                    aux->setDato(' ');
+                    dt = true;
+                    posicionGaneTablero(aux, aux->abajo->abajo, 0, +2);
+                }
+                else {
+                    dt = false;
+                }              
+            }
+            else if (aux->abajo->getDato() != '#') {
+                aux->abajo->setDato('@');
+                aux->setDato(' ');
+                dt = true;
+                posicionGaneTablero(aux, aux->abajo->abajo, 0, +2);
+            }
+
+            return dt;
         }
         else {
             if (aux != NULL && aux->izquierda->getDato() != '#' && x == 'A') {
-                c = aux->getDato();
-                aux2 = aux->izquierda;
-                aux->setDato(aux2->getDato());
-                aux2->setDato(c);
+                if (aux->izquierda->getDato() == '$') {
+                    if (aux->izquierda->izquierda->getDato() != '$' && aux->izquierda->izquierda->getDato() != '#' && aux->izquierda->izquierda->getDato() != '!') {
+                        aux->izquierda->izquierda->setDato('$');
+                        aux->izquierda->setDato('@');
+                        aux->setDato(' ');
+                        moverCajas('A', aux->getX()-1, aux->getY());
+                        dt = true;
+                        posicionGaneTablero(aux, aux->izquierda->izquierda, -2, 0);
+                    }
+                    else
+                    {
+                        dt = false;
+                    }
+                }
+                else if (aux->izquierda->getDato() == '!') {
 
-                return true;
+                    if (aux->izquierda->izquierda->getDato()  != '#') {
+                        aux->izquierda->izquierda->setDato('$');
+                        moverCajas('A', aux->getX() - 1, aux->getY());
+                        aux->izquierda->setDato('@');
+                        aux->setDato(' ');
+                        dt = true;
+                        posicionGaneTablero(aux, aux->izquierda->izquierda, -2, 0);
+                    }
+                    else {
+                        dt = false;
+                    }  
+                }
+                else if (aux->izquierda->getDato() != '#') {
+                    aux->izquierda->setDato('@');
+                    aux->setDato(' ');
+                    dt = true;
+                    posicionGaneTablero(aux, aux->izquierda->izquierda, -2, 0);
+                }
+
+                return dt;
             }
             else {
                 if (aux != NULL && aux->derecha->getDato() != '#' && x == 'D') {
-                    c = aux->getDato();
-                    aux2 = aux->derecha;
-                    aux->setDato(aux2->getDato());
-                    aux2->setDato(c);
-                    return true;
+                    if (aux->derecha->getDato() == '$') {
+                        if (aux->derecha->derecha->getDato() != '$' && aux->derecha->derecha->getDato() != '#' && aux->derecha->derecha->getDato() != '!') {
+                            aux->derecha->derecha->setDato('$');
+                            aux->derecha->setDato('@');
+                            aux->setDato(' ');
+                            moverCajas('D', aux->getX() + 1, aux->getY());
+                            dt = true;
+                            posicionGaneTablero(aux, aux->derecha->derecha, 2, 0);
+                        }
+                        else
+                        {
+                            dt = false;
+                        }
+                    }
+                    else if (aux->derecha->getDato() == '!') {
+
+                        if (aux->derecha->derecha->getDato() != '#') {
+
+                            aux->derecha->derecha->setDato('$');
+                            moverCajas('D', aux->getX() + 1, aux->getY());
+                            aux->derecha->setDato('@');
+                            aux->setDato(' ');
+                            dt = true;
+                            posicionGaneTablero(aux, aux->derecha->derecha, 2, 0);
+                        }
+                        else {
+                            dt = false;
+                        }                     
+                    }
+                    else if (aux->derecha->getDato() != '#') {
+                        aux->derecha->setDato('@');
+                        aux->setDato(' ');
+                        dt = true;
+                        posicionGaneTablero(aux, aux->derecha->derecha, 2, 0);
+                    }
+
+                    return dt;
                 }
                 else {
-                    return false;
+                    return dt;
                 }
             }
         }
     }
     }
 
-   
+void AreaJuego::posicionGaneTablero(NodoCentral* nc,NodoCentral *nd, int x, int y) {
 
-void AreaJuego::eventoTeclas(Event event) {
+    if (AppContext::getInstance().getNivel() == 1) {
 
-    if (event.key.code == sf::Keyboard::A && movimientoValido('A') ) {
-        //cout << "Tecla A precionada" << endl;
+        if (nc->getX() + x == 4 && nc->getY() + y == 2 && nd->getDato() == '$') {
+            nd->setDato('!');
+        }
+        else if (nc->getX() + x == 4 && nc->getY() + y == 4 && nd->getDato() == '$') {
+            nd->setDato('!');
+        }
+        
+        if (nc->getX() == 4 && nc->getY() == 2 || nc->getX() == 4 && nc->getY() == 4) {
+            nc->setDato('.');
+        }   
+
+    }
+}
+
+void AreaJuego::eventoTeclas(Event event, char repeticion) {
+
+    if (event.key.code == sf::Keyboard::A && movimientoValido('A') || repeticion == 'A' && movimientoValido('A')) {
         tablero->imprimir();
         posX = posX - 54;
+        cout << posX << endl;
         row = 50;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
             frame_counter = 0;
         }
         frame_counter++;
+        
     }
     else if (event.key.code == sf::Keyboard::D && movimientoValido('D')) {
-        //cout << "Tecla D precionada" << endl;
+
         tablero->imprimir();
         posX = posX + 54;
+        cout << posX << endl;
         row = 100;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
@@ -129,9 +278,10 @@ void AreaJuego::eventoTeclas(Event event) {
         frame_counter++;
     }
     else if (event.key.code == sf::Keyboard::W && movimientoValido('W')) {
-        //cout << "Tecla W precionada" << endl;
+
         tablero->imprimir();
         posY = posY - 51;
+        cout << posY << endl;
         row = 150;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
@@ -140,14 +290,74 @@ void AreaJuego::eventoTeclas(Event event) {
         frame_counter++;
     }
     else if (event.key.code == sf::Keyboard::S && movimientoValido('S')) {
-        //cout << "Tecla S precionada" << endl;
+
         tablero->imprimir();
         posY = posY + 51;
+        cout << posY << endl;
         row = 0;
         if (frame_counter == 1) {
             frame = (frame + 1) % 4;
             frame_counter = 0;
         }
         frame_counter++;
+    }
+}
+
+void AreaJuego::moverCajas(char letra, int f, int c) {
+
+    if (AppContext::getInstance().getNivel() == 1) {
+
+            if (x1 == f && y1 == c)
+            {
+                if (letra == 'W') {
+                    cY1 = cY1 - 51;
+                    y1 = y1 - 1;
+                }
+                else if (letra == 'S') {
+                    cY1 = cY1 + 51;
+                    y1 = y1 + 1;
+                }
+                else if (letra == 'A') {
+                    cX1 = cX1 - 54;
+                    x1 = x1 - 1;
+                }
+                else if (letra == 'D') {
+                    cX1 = cX1 + 54;
+                    x1 = x1 + 1;
+                }
+                
+            }
+            else if(x2 == f && y2 == c)
+            {
+                if (letra == 'W') {
+                    cY2 = cY2 - 51;
+                    y2 = y2 - 1;
+                }
+                else if (letra == 'S') {
+                    cY2 = cY2 + 51;
+                    y2 = y2 + 1;
+                }
+                else if (letra == 'A') {
+                    cX2 = cX2 - 51;
+                    x2 = x2 - 1;
+                }
+                else if (letra == 'D') {
+                    cX2 = cX2 + 51;
+                    x2 = x2 + 1;
+                }
+            }
+         
+    }
+    else if (AppContext::getInstance().getNivel() == 2) {
+
+    }
+    else if (AppContext::getInstance().getNivel() == 3) {
+
+    }
+    else if (AppContext::getInstance().getNivel() == 4) {
+
+    }
+    else if (AppContext::getInstance().getNivel() == 5) {
+
     }
 }
