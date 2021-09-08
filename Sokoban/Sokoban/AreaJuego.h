@@ -27,7 +27,15 @@ private:
 	int cX2 = 570, x2 = 2;
 	int cY2 = 458, y2 = 4;
 
+
+	
+
 public:
+	vector<char> movimientosLvl1;
+	vector<char> movimientosLvl2;
+	vector<char> movimientosLvl3;
+	vector<char> movimientosLvl4;
+	vector<char> movimientosLvl5;
 	AreaJuego();
 	void bucleJugar(RenderWindow*& ventana);
 	void clickPantalla(int x, int y);
@@ -35,4 +43,8 @@ public:
 	void posicionGaneTablero(NodoCentral *nc, NodoCentral *nd, int x, int y);
 	void moverCajas(char letra, int f, int c);
 	bool movimientoValido(char x);
+
+	void inicializarMovimientosCorrectos();
+	void llenarAutomatico(Event event);
+	void ejecutarMovimientosAutomaticos(int lvl, Event e);
 };

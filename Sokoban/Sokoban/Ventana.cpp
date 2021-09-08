@@ -4,6 +4,7 @@
 #include "AcercaDe.h"
 #include "Jugar.h"
 #include "AppContext.h"
+#include <thread>
 
 
 using namespace std;
@@ -49,10 +50,11 @@ void Ventana::bucleJuego() {
         }
         else if (AppContext::getInstance().getPantalla() == 6) {
             areaJuego->bucleJugar(ventana);
+            
         }
 
         
-
+        bool bandera=false;
         Event event;
         while (this->ventana->pollEvent(event))
         {
@@ -83,9 +85,33 @@ void Ventana::bucleJuego() {
             else if (event.type == sf::Event::KeyPressed) {
 
                 if (AppContext::getInstance().getPantalla() == 6) {
-                    areaJuego->eventoTeclas(event, NULL);
+                    if (event.key.code == sf::Keyboard::P || bandera) {
+                        areaJuego->ejecutarMovimientosAutomaticos(AppContext::getInstance().getNivel(), event);
+
+
+                        bandera = true;
+                            std::this_thread::sleep_for(std::chrono::seconds(1));
+                    }
+                    else {
+                    
+                   areaJuego->eventoTeclas(event, NULL);
+                    }
+                   
                 }
                 
+            }
+            else if (bandera) {
+                if (AppContext::getInstance().getNivel() == 1 && areaJuego->movimientosLvl1.size() == 0 || AppContext::getInstance().getNivel() == 2 && areaJuego->movimientosLvl2.size() == 0 ||
+                    AppContext::getInstance().getNivel() == 3 && areaJuego->movimientosLvl3.size() == 0 || AppContext::getInstance().getNivel() == 4 && areaJuego->movimientosLvl4.size() == 0 ||
+                    AppContext::getInstance().getNivel() == 5 && areaJuego->movimientosLvl5.size() == 0) {
+                    
+                    areaJuego->inicializarMovimientosCorrectos();
+                    bandera = false;
+                }
+                else {
+                    areaJuego->ejecutarMovimientosAutomaticos(AppContext::getInstance().getNivel(), event);
+                    std::this_thread::sleep_for(std::chrono::seconds(1));
+                }
             }
 
         }

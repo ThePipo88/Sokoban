@@ -18,4 +18,6 @@ public:
 	void insertar(int x, int y, char n);
 	void llenar(int x, int y);
 	void imprimir();
+
+	void llenarAutomatico();
 };
