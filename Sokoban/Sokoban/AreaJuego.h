@@ -21,6 +21,7 @@ private:
 	bool nvlGanado = false;
 	bool rep = false;
 	bool ini = true;
+	bool partidaG = false;
 	Tablero* tablero;
 	Figuras *sp = new Figuras();
 	Figuras *fg = new Figuras[4];

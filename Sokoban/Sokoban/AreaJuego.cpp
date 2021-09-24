@@ -44,6 +44,15 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
         ventana->draw(sp->getSpriteJugador());
         ventana->draw(fg[0].getSpriteCaja());
         ventana->draw(fg[1].getSpriteCaja());
+
+        if (partidaG) {
+            Texture gane;
+            gane.loadFromFile("Resources/guardada.PNG");
+            Sprite ganar(gane);
+            ganar.setPosition(280.f, 100.f);
+            ventana->draw(ganar);
+        }
+
         if (nvlGanado == true) {
             Texture gane;
             gane.loadFromFile("Resources/gane.PNG");
@@ -70,6 +79,15 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
         ventana->draw(sp->getSpriteJugador());
         ventana->draw(fg[0].getSpriteCaja());
         ventana->draw(fg[1].getSpriteCaja());
+
+        if (partidaG) {
+            Texture gane;
+            gane.loadFromFile("Resources/guardada.PNG");
+            Sprite ganar(gane);
+            ganar.setPosition(280.f, 100.f);
+            ventana->draw(ganar);
+        }
+
         if (nvlGanado == true) {
             Texture gane;
             gane.loadFromFile("Resources/gane.PNG");
@@ -100,6 +118,14 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
         ventana->draw(fg[1].getSpriteCaja());
         ventana->draw(fg[2].getSpriteCaja());
 
+        if (partidaG) {
+            Texture gane;
+            gane.loadFromFile("Resources/guardada.PNG");
+            Sprite ganar(gane);
+            ganar.setPosition(280.f, 100.f);
+            ventana->draw(ganar);
+        }
+
         if (nvlGanado == true) {
             Texture gane;
             gane.loadFromFile("Resources/gane.PNG");
@@ -128,6 +154,14 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
         ventana->draw(fg[0].getSpriteCaja());
         ventana->draw(fg[1].getSpriteCaja());
         ventana->draw(fg[2].getSpriteCaja());
+
+        if (partidaG) {
+            Texture gane;
+            gane.loadFromFile("Resources/guardada.PNG");
+            Sprite ganar(gane);
+            ganar.setPosition(280.f, 100.f);
+            ventana->draw(ganar);
+        }
 
         if (nvlGanado == true) {
             Texture gane;
@@ -159,6 +193,14 @@ void AreaJuego::bucleJugar(RenderWindow*& ventana) {
     ventana->draw(fg[1].getSpriteCaja());
     ventana->draw(fg[2].getSpriteCaja());
     ventana->draw(fg[3].getSpriteCaja());
+
+    if (partidaG) {
+        Texture gane;
+        gane.loadFromFile("Resources/guardada.PNG");
+        Sprite ganar(gane);
+        ganar.setPosition(280.f, 100.f);
+        ventana->draw(ganar);
+    }
 
     if (nvlGanado == true) {
         Texture gane;
@@ -295,6 +337,14 @@ void AreaJuego::clickPantalla(int x, int y) {
     Sleep(200);
     ejecutarMovimientosAutomaticos(1);
 
+    }
+    else if (x > 1186 && x < 1266 && y > 270 && y < 384) {
+    cout << "Partida guardada" << endl;
+    partidaG = true;
+    }
+    else if (x > 512 && x < 815 && y > 405 && y < 486
+    && partidaG) {
+    partidaG = false;
     }
 }
 
