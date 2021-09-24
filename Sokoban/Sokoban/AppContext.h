@@ -8,10 +8,11 @@ private:
 	AppContext();
 	//Atributos
 	int pantalla;
-	int nivel;
+	int nivel = 1;
 	int posX;
 	int posY;
 	RenderWindow* ventana;
+	Event* ev;
 	//Partida* partida;
 public:
 	static AppContext& getInstance();
@@ -23,4 +24,6 @@ public:
 	int getY();
 	RenderWindow* getWindow();
 	void setWindow(RenderWindow* v);
+	Event* getEvent();
+	void setEvent(Event* e);
 };

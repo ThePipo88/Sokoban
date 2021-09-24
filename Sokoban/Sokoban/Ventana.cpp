@@ -22,6 +22,7 @@ void Ventana::bucleJuego() {
 
 	while (this->ventana->isOpen()) {
          
+        AppContext::getInstance().setWindow(ventana);
 
         if (AppContext::getInstance().getPantalla() == 1) {
             Texture texture;

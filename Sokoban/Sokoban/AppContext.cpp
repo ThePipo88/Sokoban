@@ -50,3 +50,11 @@ RenderWindow* AppContext::getWindow() {
 void AppContext::setWindow(RenderWindow* v) {
 	this->ventana = v;
 }
+
+Event* AppContext::getEvent() {
+	return ev;
+}
+
+void AppContext::setEvent(Event *e) {
+	ev = e;
+}
