@@ -10,6 +10,8 @@
 #include <chrono>
 #include <thread>
 #include <ctime>
+#include <fstream>
+
 
 
 AreaJuego::AreaJuego() {
@@ -261,7 +263,6 @@ void AreaJuego::clickPantalla(int x, int y) {
              cY1 = 440, y1 = 4;
              cX2 = 624, x2 = 3;
              cY2 = 491, y2 = 5;
-
          }
          else if (AppContext::getInstance().getNivel() == 3) {
 
@@ -339,7 +340,39 @@ void AreaJuego::clickPantalla(int x, int y) {
 
     }
     else if (x > 1186 && x < 1266 && y > 270 && y < 384) {
-    cout << "Partida guardada" << endl;
+    ofstream fichero("partida.txt");
+    fichero << AppContext::getInstance().getNivel() << endl;
+    fichero << posX << endl;
+    fichero << posY << endl;
+    fichero << tablero->buscarJugador()->getX() << endl;
+    fichero << tablero->buscarJugador()->getY() << endl;
+
+    if (AppContext::getInstance().getNivel() == 1 || AppContext::getInstance().getNivel() == 2) {
+        fichero << cX1 << endl; fichero << cY1 << endl;
+        fichero << x1 << endl; fichero << y1 << endl;
+        fichero << cX2 << endl; fichero << cY2 << endl;
+        fichero << x2 << endl; fichero << y2 << endl;
+    }
+    else if (AppContext::getInstance().getNivel() == 3 || AppContext::getInstance().getNivel() == 4) {
+        fichero << cX1 << endl; fichero << cY1 << endl;
+        fichero << x1 << endl; fichero << y1 << endl;
+        fichero << cX2 << endl; fichero << cY2 << endl;
+        fichero << x2 << endl; fichero << y2 << endl;
+        fichero << cX3 << endl; fichero << cY3 << endl;
+        fichero << x3 << endl; fichero << y3 << endl;
+    }
+    else if (AppContext::getInstance().getNivel() == 5) {
+        fichero << cX1 << endl; fichero << cY1 << endl;
+        fichero << x1 << endl; fichero << y1 << endl;
+        fichero << cX2 << endl; fichero << cY2 << endl;
+        fichero << x2 << endl; fichero << y2 << endl;
+        fichero << cX3 << endl; fichero << cY3 << endl;
+        fichero << x3 << endl; fichero << y3 << endl;
+        fichero << cX4 << endl; fichero << cY4 << endl;
+        fichero << x4 << endl; fichero << y4 << endl;
+    }
+
+    fichero.close();
     partidaG = true;
     }
     else if (x > 512 && x < 815 && y > 405 && y < 486

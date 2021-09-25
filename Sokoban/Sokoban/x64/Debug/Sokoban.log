@@ -1,2 +1,32 @@
-﻿  AcercaDe.cpp
+﻿  AreaJuego.cpp
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(40,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(40,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(41,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(41,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(75,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(75,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(76,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(76,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(111,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(111,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(112,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(112,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(113,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(113,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(148,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(148,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(149,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(149,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(150,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(150,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(185,27): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(185,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(186,27): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(186,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(187,27): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(187,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(188,27): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(188,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(493,10): warning C4101: 'c': variable local sin referencia
+C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\Sokoban\AreaJuego.cpp(492,18): warning C4101: 'aux2': variable local sin referencia
   Sokoban.vcxproj -> C:\Users\Pipo\Documents\GitHub\Sokoban\Sokoban\x64\Debug\Sokoban.exe
