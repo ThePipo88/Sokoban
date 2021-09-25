@@ -13,26 +13,25 @@ AcercaDe::AcercaDe() {
 void AcercaDe::bucleJugar(RenderWindow*& ventana) {
 
     Texture texture;
-    if (!texture.loadFromFile("Resources/AcercaDe.JPG"))
-    {
-        cout << "Error al cargar imagen" << endl;
-    }
+    texture.loadFromFile("Resources/AcercaDe.JPG");
     Sprite sprite(texture);
     sprite.setPosition(0.f, 0.f);
+
+    Texture acerca;
+    acerca.loadFromFile("Resources/Creditos.PNG");
+    Sprite acercaD(acerca);
+    acercaD.setPosition(20.f, 0.f);
+
     ventana->clear();
     ventana->draw(sprite);
+    ventana->draw(acercaD);
     ventana->display();
 }
 
 void AcercaDe::clickPantalla(int x, int y) {
 
-    if (x > 15 && x < 419 && y > 759 && y < 840) {
+    if (x > 24 && x < 328 && y > 750 && y < 833) {
         cout << "Retroceso" << endl;
         AppContext::getInstance().setPantalla(1);
     }
-    else if (x > 964 && x < 1268 && y > 759 && y < 840) {
-        cout << "Comenzar" << endl;
-        AppContext::getInstance().setPantalla(6);
-    }
-
 }
